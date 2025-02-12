@@ -2,8 +2,8 @@ const buttons = document.querySelectorAll('.btn');
 const messageRoundContainer = document.querySelector('#msg-round-container');
 const mainMessageRound = document.querySelector('#main-msg-round');
 const secondMessageRound = document.querySelector('#second-msg-round');
-const playerScoreText = document.querySelector('#player-round-score');
-const computerScoreText = document.querySelector('#computer-round-score');
+const playerScoreText = document.querySelector('#player-round-score-desktop');
+const computerScoreText = document.querySelector('#computer-round-score-desktop');
 const gameOverModal = document.querySelector('#game-over-modal');
 const playAgainBtn = document.getElementById('play-again-btn');
 const modalTextResult = document.querySelector('.modal-text-result');
@@ -85,14 +85,14 @@ function playRound(playerChoice, computerChoice) {
         secondMessageRound.textContent = `${playerChoice.type} beats ${computerChoice.type}`;
         messageRoundContainer.classList.add('win');
         playerScore++;
-        playerScoreText.textContent = playerScore;
+        document.querySelectorAll('[id^="player-round-score"]').forEach(el => el.textContent = playerScore);
     } else {
         mainMessageRound.textContent = "You Lose!";
         secondMessageRound.textContent = `${computerChoice.type} beats ${playerChoice.type}`;
         messageRoundContainer.classList.remove('win', 'tie');
         messageRoundContainer.classList.add('lose');
         computerScore++;
-        computerScoreText.textContent = computerScore;
+        document.querySelectorAll('[id^="computer-round-score"]').forEach(el => el.textContent = computerScore);
         messageRoundContainer.classList.add('lose');
     }
     setTimeout(() => {
@@ -129,6 +129,9 @@ function resetGame() {
   }
 
 function checkForWinner (playerScore, computerScore){
+    document.querySelector('#player-round-score-mobile').textContent = playerScore;
+    document.querySelector('#computer-round-score-mobile').textContent = computerScore;
+
     const modalTitle = document.querySelector('.modal-title');
     const modalTextResult = document.querySelector('.modal-text-result');
     const modalPlayerScore = document.querySelector('#modal-player-score');
