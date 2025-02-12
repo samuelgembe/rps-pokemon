@@ -320,6 +320,20 @@ h3{
     color: #4B6F71;
   }
 
+  .win #main-msg-round,
+.win #second-msg-round {
+  color: white;
+}
+
+.lose #main-msg-round,
+.lose #second-msg-round {
+  color: white;
+}
+
+.tie #main-msg-round,
+.tie #second-msg-round {
+  color: #4B6F71;
+}
 
   /* this lines are for hover buttons and make img pokemon visible */
   /* #player-pokemon-preview {
