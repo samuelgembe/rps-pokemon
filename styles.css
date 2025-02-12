@@ -11,7 +11,9 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
+#round-score-mobile{
+  display: none;
+}
 .mobile-only {
   display: none;
 }
@@ -406,11 +408,12 @@ h3{
 
     #computer-card{
       padding-top: 0;
+      gap: 12px;
     }
 
-    #player-card{
+    /* #player-card{
       border-top: 1px solid #24CCAA;
-    }
+    } */
     
     #player-pokemon-img img, 
     #computer-pokemon-img img {
@@ -475,5 +478,22 @@ h3{
     }
     .modal-text-result{
       font-size: 20px;
+    }
+
+    #round-score-mobile{
+      display: flex;
+      gap: 48px;
+    }
+    #round-score-mobile h2{
+      color: #C3DFDF;
+      font-weight: 300;
+    }
+    .middle-line{
+      flex: auto;
+      border-bottom: 1px solid #C3DFDF;
+      margin: auto;
+      content: "";
+      height: 3px;
+      width: 30px;
     }
   }
