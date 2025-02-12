@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper Scissors - Pokemon Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+
+        <div id="header">
+            <h2>ROCK, POKÉ, SCISSORS</h2>
+            <div id="logo-container">
+                <img src="img/logo.png" alt="logo pokemon" class="logo">
+            </div>
+        </div>
+
+        <div id="msg-round-container" class="win lose tie hidden">
+            <h3 id="main-msg-round">You Win!</h3>
+            <p id="second-msg-round">Water beats Fire</p>
+        </div>
+
+        <div id="battle-area">
+            <div id="pokemon-cards">
+
+                <div id="player-card">
+                    <!-- this lines are for hover buttons and make img pokemon visible -->
+                    <!-- <div id="player-pokemon-preview"></div> -->
+                    <div id="player-pokemon-img" class="hidden">
+                        <img src="img/cyndaquil-player.png" alt="player choice" id="player-pokemon-img">
+                    </div>
+
+                    <div id="choose-pokemon">
+                        <h3>Choose your Pokémon:</h3>
+                        <div id="pokemon-btns">
+                            <button class="btn totodile">Totodile<img src="img/water.svg"></button>
+                            <button class="btn cyndaquil">Cyndaquil<img src="img/fire.svg"></button>
+                            <button class="btn chikorita">Chikorita<img src="img/grass.svg"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="computer-card" class="hidden">
+                    <div id="computer-pokemon-img" class="hidden">
+                        <img src="img/chikorita-computer.png" alt="computer choice" id="computer-pokemon-img">
+                    </div>
+
+                    <div id="computer-choice">
+                        <h3>Computer chose <strong class="computer-name-pokemon">Chikorita</strong></h3>
+                        <div class="placeholder-for-alignment">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <div id="player-score-container">
+                <h2>Player</h2>
+                <h2 id="player-round-score">0</h2>
+            </div>
+
+            <div id="computer-score-container">
+                <h2 id="computer-round-score">0</h2>
+                <h2>Computer</h2>
+            </div>
+        </div>
+
+
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+              <h2 class="modal-title">Better luck next time, trainer</h2>
+              <p class="modal-text-result win-text lose-text">You Lose</p>
+              <div class="score-display">
+                <div class="score player-score">
+                  <h3 id="modal-player-score">0</h3>
+                  <p>Player Score</p>
+                </div>
+                <div class="score computer-score">
+                  <h3 id="modal-computer-score">0</h3>
+                  <p>Computer Score</p>
+                </div>
+              </div>
+              <button id="play-again-btn" class="btn">Play Again</button>
+            </div>
+          </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
