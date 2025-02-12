@@ -6,6 +6,7 @@ const playerScoreText = document.querySelector('#player-round-score');
 const computerScoreText = document.querySelector('#computer-round-score');
 const gameOverModal = document.querySelector('#game-over-modal');
 const playAgainBtn = document.getElementById('play-again-btn');
+const modalTextResult = document.querySelector('.modal-text-result');
 
 
 const choices = [
@@ -111,6 +112,8 @@ function resetGame() {
     document.getElementById('computer-card').classList.add('hidden');
     document.getElementById('player-pokemon-img').classList.add('hidden');
     document.getElementById('computer-pokemon-img').classList.add('hidden');
+    modalTextResult.classList.remove("win-text", "lose-text");
+    modalTextResult.classList.add("lose-text"); // Reset to default color if needed
 
     gameOverModal.classList.add('hidden');
 
@@ -131,18 +134,21 @@ function checkForWinner (playerScore, computerScore){
     const modalPlayerScore = document.querySelector('#modal-player-score');
     const modalComputerScore = document.querySelector('#modal-computer-score');
 
-    if (playerScore === 5){
+    if (playerScore === 5) {
         gameOverModal.classList.remove('hidden');
         modalTitle.textContent = "What a battle!"; 
         modalTextResult.textContent = "You Win";
         modalTextResult.classList.remove("lose-text");
+        modalTextResult.classList.add("win-text"); // Add this line
         modalComputerScore.textContent = computerScore;
         modalPlayerScore.textContent = playerScore;
-    } if (computerScore === 5){
+    } 
+    if (computerScore === 5) {
         gameOverModal.classList.remove('hidden');
         modalTitle.textContent = "Better luck next time, trainer"; 
         modalTextResult.textContent = "You Lose";
         modalTextResult.classList.remove("win-text");
+        modalTextResult.classList.add("lose-text"); // Add this line
         modalComputerScore.textContent = computerScore;
         modalPlayerScore.textContent = playerScore;
     }
